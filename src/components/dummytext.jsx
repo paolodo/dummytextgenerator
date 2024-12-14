@@ -70,7 +70,15 @@ function DummyText({ options, className }) {
       }
     }
     else if (options.template != '') {
-      result = eval(options.template).slice(0, options.nCharacters);
+      if (options.template == 'shining') {
+        result = shining.slice(0, options.nCharacters);
+      }
+      else if (options.template == 'divinaCommedia') {
+        result = divinaCommedia.slice(0, options.nCharacters);
+      }
+      else if (options.template == 'pabloNeruda') {
+        result = pabloNeruda.slice(0, options.nCharacters);
+      }
       if (options.accents) {
         result = result.replace(/[aeiouAEIOU]/g, (match) => {
           const accentsMap = {
